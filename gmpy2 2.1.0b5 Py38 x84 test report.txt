@@ -1,0 +1,74 @@
+In [1]: %run -t "C:/.../python-build/gmpy2-2.1.0b5/test/runtests.py"
+
+Unit tests for gmpy2 2.1.0b5 with Python 3.8.5                         
+  Mutliple-precision library:     GMP 6.2.0                            
+  Floating-point library:         MPFR 4.1.0                           
+  Complex library:                MPC 1.2.0                            
+  Caching Values: (Cache size)    100                                  
+  Caching Values: (Size in limbs) 128                                  
+                                                                       
+Results for:  test_context              Attempted:   38   Failed:    0 
+Results for:  test_gmpy2_abs            Attempted:   83   Failed:    0 
+Results for:  test_gmpy2_add            Attempted:   82   Failed:    0 
+Results for:  test_gmpy2_binary         Attempted:  106   Failed:    0 
+Results for:  test_gmpy2_cmp            Attempted:   41   Failed:    0 
+Results for:  test_gmpy2_comp           Attempted:   89   Failed:    0 
+Results for:  test_gmpy2_const          Attempted:   33   Failed:    0 
+Results for:  test_gmpy2_constructors   Attempted:   34   Failed:    0 
+Results for:  test_gmpy2_convert        Attempted:   50   Failed:    0 
+Results for:  test_gmpy2_divmod         Attempted:   42   Failed:    0 
+Results for:  test_gmpy2_floordiv       Attempted:   72   Failed:    0 
+Results for:  test_gmpy2_format         Attempted:  102   Failed:    0 
+Results for:  test_gmpy2_fused          Attempted:   18   Failed:    0 
+Results for:  test_gmpy2_lucas          Attempted:   23   Failed:    0 
+Results for:  test_gmpy2_math           Attempted:  147   Failed:    0 
+Results for:  test_gmpy2_minus          Attempted:   14   Failed:    0 
+Results for:  test_gmpy2_mpfr_misc      Attempted:   69   Failed:    0 
+Results for:  test_gmpy2_mpq_misc       Attempted:   31   Failed:    0 
+Results for:  test_gmpy2_mpq_misc_py3   Attempted:    3   Failed:    0 
+Results for:  test_gmpy2_mpz_bitops     Attempted:  106   Failed:    0 
+Results for:  test_gmpy2_mpz_divmod     Attempted:   67   Failed:    0 
+Results for:  test_gmpy2_mpz_divmod2exp Attempted:   66   Failed:    0 
+Results for:  test_gmpy2_mpz_inplace    Attempted:   85   Failed:    0 
+Results for:  test_gmpy2_mpz_misc       Attempted:  225   Failed:    0 
+Results for:  test_gmpy2_mpz_misc_py3   Attempted:   19   Failed:    0 
+Results for:  test_gmpy2_mul            Attempted:   68   Failed:    0 
+Results for:  test_gmpy2_muldiv_2exp    Attempted:   24   Failed:    0 
+Results for:  test_gmpy2_plus           Attempted:   16   Failed:    0 
+Results for:  test_gmpy2_pow            Attempted:   53   Failed:    0 
+Results for:  test_gmpy2_predicate      Attempted:  120   Failed:    0 
+Results for:  test_gmpy2_prp            Attempted:   57   Failed:    0 
+Results for:  test_gmpy2_root           Attempted:   23   Failed:    0 
+Results for:  test_gmpy2_square         Attempted:   19   Failed:    0 
+Results for:  test_gmpy2_sub            Attempted:   83   Failed:    0 
+Results for:  test_gmpy2_xmpz_inplace   Attempted:   79   Failed:    0 
+Results for:  test_gmpy2_xmpz_limbs     Attempted:   21   Failed:    0 
+Results for:  test_gmpy2_xmpz_misc      Attempted:   59   Failed:    0 
+Results for:  test_misc                 Attempted:   27   Failed:    0 
+Results for:  test_mpc                  Attempted:  132   Failed:    0 
+Results for:  test_mpc_create           Attempted:    7   Failed:    0 
+Results for:  test_mpc_trig             Attempted:   21   Failed:    0 
+Results for:  test_mpfr                 Attempted:  227   Failed:    0 
+Results for:  test_mpfr4_fused          Attempted:   13   Failed:    0 
+Results for:  test_mpfr4_random         Attempted:    7   Failed:    0 
+Results for:  test_mpfr_create          Attempted:   73   Failed:    0 
+Results for:  test_mpfr_min_max         Attempted:   26   Failed:    0 
+Results for:  test_mpfr_subnormalize    Attempted:   17   Failed:    0 
+Results for:  test_mpfr_trig            Attempted:  140   Failed:    0 
+Results for:  test_mpq                  Attempted:  207   Failed:    0 
+Results for:  test_mpz                  Attempted:  230   Failed:    0 
+Results for:  test_mpz_create           Attempted:   58   Failed:    0 
+Results for:  test_mpz_io               Attempted:   60   Failed:    0 
+Results for:  test_mpz_pack_unpack      Attempted:   16   Failed:    0 
+Results for:  test_py32_hash            Attempted:   18   Failed:    0 
+                                                                       
+                              Summary - Attempted: 3546   Failed:    0 
+                                                                       
+Running external test programs.                                        
+Running test_pack.py                    successful                     
+Running test_mpz_args.py                successful                     
+
+IPython CPU timings (estimated):
+  User   :       4.14 s.
+  System :       0.00 s.
+Wall time:       4.15 s.
