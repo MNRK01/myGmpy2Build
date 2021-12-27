@@ -29,11 +29,11 @@ INSTALLDIR=$ROOTDIR/build
 [[ -e $ROOTDIR/build-log.txt ]] && rm $ROOTDIR/build-log.txt
 
 # version numbers
-GMPVER="6.2.0"
+GMPVER="6.2.1"
 MPFRVER="4.1.0"
 MPIRVER="3.0.0"
 MPCVER="1.2.0"
-GMPY2VER="2.1.0b5"
+GMPY2VER="2.1.1"
 BIGFLOATVER="0.4.0"
 
 # directory variables
@@ -130,7 +130,7 @@ echo                                                                            
 echo "# **************************************************************************"     >> $ROOTDIR/build-info.txt
 echo                                                                                    >> $ROOTDIR/build-info.txt
 
-# download, extract sources, build and install mpir
+# download, extract sources, build and install mpc
 echo "Starting mpc-${MPCVER} build..."
 echo "Starting mpc-${MPCVER} build..." >> $ROOTDIR/build-log.txt
 cd $ROOTDIR
@@ -166,14 +166,17 @@ OLDPATH=$PATH
 PATH=$PYTHONDIR:$PYTHONSCRIPTSDIR:$PYTHONLIBBINDIR:$PATH
 
 # download, extract sources, build and install gmpy2
-# this requires a patched ccygwincompiler.py, and (lib)python38.{a,def}, (lib)vcruntime140.{a,def} in $PYTHONDIR/libs
+# **this requires a patched ccygwincompiler.py, and (lib)python3x.{a,def}, (lib)vcruntime140.{a,def} in $PYTHONDIR/libs**
+# dlltool --dllname vcruntime140.dll --input-def vcruntime140.def --output-lib libvcruntime140.a && mv *.a *.def libs
+# dlltool --dllname python39.dll --input-def python39.def --output-lib libpython39.a && mv *.a *.def libs
 echo "Starting gmpy2-${GMPY2VER} build..."
 echo "Starting gmpy2-${GMPY2VER} build..." >> $ROOTDIR/build-log.txt
 cd $ROOTDIR
-[[ -e gmpy2-${GMPY2VER}.tar.gz ]] || wget https://files.pythonhosted.org/packages/1d/6c/f913b453446d2ed8bf2151be5f92ce2eabaa72ceb2f98c071ad77329b964/gmpy2-${GMPY2VER}.tar.gz >> $ROOTDIR/build-log.txt 2>&1
+# [[ -e gmpy2-${GMPY2VER}.tar.gz ]] || wget https://files.pythonhosted.org/packages/1d/6c/f913b453446d2ed8bf2151be5f92ce2eabaa72ceb2f98c071ad77329b964/gmpy2-${GMPY2VER}.tar.gz >> $ROOTDIR/build-log.txt 2>&1
+[[ -e gmpy2-${GMPY2VER}.tar.gz ]] || wget https://files.pythonhosted.org/packages/7b/b9/a2b3ab43beff51d0bdec1363c6eea4e6cdbd01f6c3527ad4192a037cf324/gmpy2-${GMPY2VER}.tar.gz >> $ROOTDIR/build-log.txt 2>&1
 [[ -d ${GMPY2DIR} ]] || tar -xzf gmpy2-${GMPY2VER}.tar.gz >> $ROOTDIR/build-log.txt 2>&1
 cd $GMPY2DIR
-patch -uN --verbose --binary setup.py < ~/Scripts/python3-gmpy2-setup.py.patch >> $ROOTDIR/build-log.txt 2>&1
+# patch -uN --verbose --binary setup.py < ~/Scripts/python3-gmpy2-setup.py.patch >> $ROOTDIR/build-log.txt 2>&1
 python setup.py build_ext --compiler="mingw32" --include-dirs="$INSTALLDIR/include"  --library-dirs="$INSTALLDIR/lib" >> $ROOTDIR/build-log.txt 2>&1
 pip wheel . >> $ROOTDIR/build-log.txt 2>&1
 mv *.whl ..
@@ -196,7 +199,9 @@ echo "# ************************************************************************
 echo                                                                                              >> $ROOTDIR/build-info.txt
 
 # download, extract sources, build and install bigfloat
-# this requires a patched ccygwincompiler.py, and (lib)python38.{a,def}, (lib)vcruntime140.{a,def} in $PYTHONDIR/libs
+# **this requires a patched ccygwincompiler.py, and (lib)python3x.{a,def}, (lib)vcruntime140.{a,def} in $PYTHONDIR/libs**
+# dlltool --dllname vcruntime140.dll --input-def vcruntime140.def --output-lib libvcruntime140.a && mv *.a *.def libs
+# dlltool --dllname python39.dll --input-def python39.def --output-lib libpython39.a && mv *.a *.def libs
 echo "Starting bigfloat-${BIGFLOATVER} build..."
 echo "Starting bigfloat-${BIGFLOATVER} build..." >> $ROOTDIR/build-log.txt
 cd $ROOTDIR
